@@ -172,6 +172,9 @@
                 input.value = value;
             }
         }
+        function redirectToPage() {
+            window.location.href = "ordersummary.html"; // Replace with your target page URL
+        }
     </script>
 </head>
 <body>
@@ -190,7 +193,7 @@
                     <div class="description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu aliquam ipsum, sed accumsan metus.
                     </div>
-                    <div class="price">P 172</div>
+                    <div class="price">P 180</div>
                     <div class="quantity">
                         <button onclick="decreaseValue(this.nextElementSibling)">-</button>
                         <input type="text" value="1">
@@ -217,7 +220,7 @@
             <!-- Repeat block ends -->
         </div>
         <div class="add-to-bag">
-            <button>Add to Bag</button>
+            <button onclick="redirectToPage()">Add to Bag</button>
         </div>
     </div>
 </body>

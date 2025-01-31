@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Example</title>
+    <style>
+        .notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            text-align: center;
+        }
+        .notification .icon {
+            font-size: 24px;
+        }
+        .notification button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .notification a {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification">
+        <span class="icon">👍</span>
+        <p>Successfully Added!</p>
+        <p>What do you want to do now?</p>
+        <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+        <a href="#" onclick="addMore(event)">Add More</a>
+    </div>
+
+    <script>
+        function proceedToCheckout() {
+            window.location.href = 'https://www.example.com/checkout'; // Replace with your checkout page URL
+        }
+
+        function addMore(event) {
+            event.preventDefault();
+            window.history.back(); // Redirects back to the recent page
+        }
+    </script>
+</body>
+</html>

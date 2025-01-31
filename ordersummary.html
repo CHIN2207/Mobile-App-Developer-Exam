@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .section {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .section h2 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .section p {
+            margin: 5px 0;
+        }
+        .order-item {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .order-item img {
+            max-width: 100px;
+            margin-right: 10px;
+        }
+        .order-item div {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .place-order {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #dc3545;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .payment-option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            margin-right: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+        .payment-option input[type="radio"]:checked {
+            background-color: #333;
+        }
+        .payment-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        function placeOrder() {
+            window.location.href = "final.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h2>Contact Information</h2>
+            <p>Name: Chou Tzuyu</p>
+            <p>Phone Number: +63 912 345 6789</p>
+            <p>Email: chou.tzu-yu@email.com</p>
+        </div>
+        <div class="section">
+            <h2>Delivery Addresses</h2>
+            <p>My Home Address: No. 21 St. Agustin Street, Brgy. De Jose Delgado City 2234 Philippines (selected)</p>
+            <p>Work/Office: 3rd flr Anyyeong Bldg. Seareal St. Joaquin City 3456 Philippines</p>
+        </div>
+        <div class="section">
+            <h2>Orders</h2>
+            <div class="order-item">
+                <img src="https://i.pinimg.com/236x/8b/aa/1c/8baa1cd7619f659f183709b4b014fab6.jpg" alt="Steak Fries Veggies">
+                <div>
+                    <p>Item: Steak Fries Veggies</p>
+                    <p>1x Tomato Sauce</p>
+                    <p>1x Regular Coke</p>
+                    <p>1x Fried Chicken</p>
+                    <p>Price: ₱185</p>
+                    <p>Quantity: 1</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Payment Option</h2>
+            <div class="payment-box">
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="cash-on-delivery"> Cash on Delivery
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="gcash"> GCash
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="paypal"> PayPal
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="paynamics"> Paynamics
+                </label>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Loyalty Points</h2>
+            <p>Available Points: 150</p>
+        </div>
+        <div class="section">
+            <h2>Order Summary</h2>
+            <p>Subtotal: ₱185</p>
+            <p>Delivery Charge: ₱59</p>
+            <p>Change for e.g. 1,000</p>
+            <p class="total">Grand Total: ₱244</p>
+        </div>
+        <a href="#" class="place-order" onclick="placeOrder()">Place Order</a>
+    </div>
+</body>
+</html>
