@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add to bag</title>
+    
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f8f8f8;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .sidebar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .sidebar h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .sidebar p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        .container {
+            width: calc(100% - 350px);
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .header {
+            padding: 10px;
+            background-color: #f8f8f8;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .image-container {
+            text-align: center;
+            padding: 10px;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .details {
+            padding: 10px;
+        }
+        .details h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .stars {
+            color: gold;
+        }
+        .description {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .price {
+            font-size: 24px;
+            color: red;
+        }
+        .quantity {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .quantity button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: #ddd;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .quantity input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+        }
+        .beverages {
+            margin: 10px 0;
+        }
+        .beverages select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .add-ons {
+            margin: 10px 0;
+        }
+        .add-ons img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .add-ons select {
+            width: calc(100% - 60px);
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            vertical-align: middle;
+        }
+        .add-to-bag {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: white;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+        }
+        .add-to-bag button {
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .scroll-container {
+            .small-image {
+            width: 30px; /* Set the desired width */
+            height: 20px; /* Maintain aspect ratio */
+        }
+    </style>
+    <script>
+        function increaseValue(input) {
+            let value = parseInt(input.value, 10);
+            value = isNaN(value) ? 0 : value;
+            if (value < 10) {
+                value++;
+                input.value = value;
+            }
+        }
+
+        function decreaseValue(input) {
+            let value = parseInt(input.value, 10);
+            value = isNaN(value) ? 0 : value;
+            if (value > 1) {
+                value--;
+                input.value = value;
+            }
+        }
+    </script>
+</head>
+<body>
+   
+    <div class="container">
+        <div class="header">Meat</div>
+        <div class="scroll-container">
+            <!-- Repeat this block 10 times -->
+            <div class="item">
+                <div class="image-container">
+                    <!-- <img src="https://i.pinimg.com/236x/cd/a5/33/cda533e4f837875daa7b966871853b4b.jpg" alt="Steak Fries Veggies"> -->
+                </div>
+                <div class="details">
+                    <h2>Steak Fries Veggies</h2>
+                    <div class="stars">★★★★★</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu aliquam ipsum, sed accumsan metus.
+                    </div>
+                    <div class="price">P 172</div>
+                    <div class="quantity">
+                        <button onclick="decreaseValue(this.nextElementSibling)">-</button>
+                        <input type="text" value="1">
+                        <button onclick="increaseValue(this.previousElementSibling)">+</button>
+                    </div>
+                    <div class="beverages">
+                        <label for="beverages">Choose Beverages</label>
+                        <select id="beverages">
+                            <option value="coke">Coke</option>
+                            <option value="pepsi">Pepsi</option>
+                            <option value="water">Water</option>
+                        </select>
+                    </div>
+                    <div class="add-ons">
+                        <label for="add-ons">Choose Add-ons</label>
+                        <!-- <img src="tomato-sauce.jpg" alt="Tomato Sauce"> -->
+                        <select id="add-ons">
+                            <option value="tomato-sauce">Tomato Sauce - P 49</option>
+                            <option value="white-rice">White Rice - P 25</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat block ends -->
+        </div>
+        <div class="add-to-bag">
+            <button>Add to Bag</button>
+        </div>
+    </div>
+</body>
+</html>

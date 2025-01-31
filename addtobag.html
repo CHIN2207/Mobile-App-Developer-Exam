@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Foods</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <div class="min-h-screen bg-gray-50">
+    <!-- Navigation Drawer -->
+    <button class="p-2 text-gray-600" onclick="toggleDrawer()" aria-label="Open Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <div id="drawer-overlay" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-40 hidden" onclick="toggleDrawer()"></div>
+    <div id="drawer" class="fixed top-0 left-0 z-50 h-full bg-white w-72 shadow-lg transform -translate-x-full transition-transform">
+      <div class="p-4 border-b">
+        <!-- User Info -->
+        <div class="flex items-center space-x-4">
+          <img src="https://i.pinimg.com/736x/3a/f9/f6/3af9f601e51068267d8ba2f7c26f594d.jpg" alt="User Avatar" class="w-12 h-12 rounded-full">
+          <div>
+            <h3 class="text-lg font-semibold">Chou Tzuyu</h3>
+            <p class="text-sm text-gray-600">+63 912 345 6789</p>
+          </div>
+        </div>
+        <!-- Points -->
+        <div class="flex items-center mt-2">
+          <a href="menu.html" class="text-yellow-500 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a4 4 0 10-8 0v3.159c0 .538-.214 1.055-.595 1.436L8 17h5" />
+            </svg>
+            70 Points
+          </a>
+        </div>
+      </div>
+
+      <!-- Menu Items -->
+      <ul class="menu-list">
+        <ul>
+          <li><a href="home.html" target="_blank">🏠 HOME</a></li>
+          <li><a href="order_now.html" target="_blank">🛒 Order Now</a></li>
+          <li><a href="#">🔔 Notifications</a></li>
+          <li><a href="#">📍 Store Locator</a></li>
+          <li><a href="#">❓ FAQ's</a></li>
+          <hr>
+        <li><span class="icon">📬</span>My Orders<span>2</span></li>
+        <li><span class="icon">👤</span>My Account</li>
+        <li><span class="icon">❤️</span>My Favorites</li>
+        <li><span class="icon">📦</span>Order Tracker</li>
+        <li><span class="icon">📜</span>Order History</li>
+        </ul>
+      </ul>
+
+      <!-- Logout Button -->
+      <div class="p-4 border-t">
+        <button id="logoutButton" class="w-full py-2 px-4 text-center text-white bg-red-600 rounded-md hover:bg-red-500">
+          <span class="w-4 h-4 mr-2 inline-block">🔒</span> Logout
+        </button>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md p-4 flex items-center justify-between">
+      <h1 class="text-xl font-semibold">Our Foods</h1>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="p-4">
+      <div class="flex items-center bg-white rounded-lg shadow-sm">
+        <input type="text" placeholder="try our new Beef Bibimbowl" class="flex-grow p-2 focus:outline-none" />
+        <button class="p-2 text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h11M9 21V3M17 16l4-4m0 0l-4-4m4 4H9" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="p-4 flex gap-2 overflow-x-auto">
+      <button class="px-4 py-2 rounded-full bg-red-500 text-white">All</button>
+      <button class="px-4 py-2 rounded-full bg-gray-200">Breakfast</button>
+      <button class="px-4 py-2 rounded-full bg-gray-200">Chicken</button>
+      <button class="px-4 py-2 rounded-full bg-gray-200">Seafood</button>
+    </div>
+
+    <!-- Food Items -->
+    <div class="p-4 grid grid-cols-2 gap-4">
+      <a href="steak.html" target="_blank" class="block bg-white rounded-lg shadow hover:shadow-md">
+        <!-- <img src="https://i.pinimg.com/236x/8b/aa/1c/8baa1cd7619f659f183709b4b014fab6.jpg" alt="Steak Fries Veggies" class="rounded-t-lg w-full"> -->
+        <img src="https://i.pinimg.com/236x/8b/aa/1c/8baa1cd7619f659f183709b4b014fab6.jpg" alt="Example" style="width: 300px; height: 200px;">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold">Steak Fries Veggies</h2>
+          <p class="text-sm text-gray-500">Meat</p>
+          <div class="flex items-center justify-between">
+            <span class="text-red-500 font-bold">P 175</span>
+            <span class="text-yellow-500">★★★★★</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="chicken_salad.html" target="_blank" class="block bg-white rounded-lg shadow hover:shadow-md">
+        <img src="https://i.pinimg.com/474x/35/71/7f/35717fa139648031adc3f2794b6daa95.jpg" alt="Example" style="width: 300px; height: 200px;">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold">Chicken Salad</h2>
+          <p class="text-sm text-gray-500">Chicken</p>
+          <div class="flex items-center justify-between">
+            <span class="text-red-500 font-bold">P 172</span>
+            <span class="text-yellow-500">★★★★★</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="dessert.html" target="_blank" class="block bg-white rounded-lg shadow hover:shadow-md">
+        <img src="https://i.pinimg.com/474x/23/b2/50/23b250fc30277bda3acda599bac2c574.jpg" alt="Example" style="width: 300px; height: 200px;">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold">Sorvetes Primavera</h2>
+          <p class="text-sm text-gray-500">Dessert</p>
+          <div class="flex items-center justify-between">
+            <span class="text-red-500 font-bold">P 185</span>
+            <span class="text-yellow-500">★★★★★</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="fried_chicken.html" target="_blank" class="block bg-white rounded-lg shadow hover:shadow-md">
+        <img src="https://i.pinimg.com/236x/a3/70/8a/a3708a5afffe0b1daf670f6de4e616b6.jpg" alt="Fried Chicken" style="width: 300px; height: 200px;">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold">Fried Chicken</h2>
+          <p class="text-sm text-gray-500">Chicken</p>
+          <div class="flex items-center justify-between">
+            <span class="text-red-500 font-bold">P 175</span>
+            <span class="text-yellow-500">★★★★★</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="pasta_carbonara.html" target="_blank" class="block bg-white rounded-lg shadow hover:shadow-md">
+        <img src="https://via.placeholder.com/150" alt="Pasta Carbonara" class="rounded-t-lg w-full">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold">Pasta Carbonara</h2>
+          <p class="text-sm text-gray-500">Pasta</p>
+          <div class="flex items-center justify-between">
+            <span class="text-red-500 font-bold">P 160</span>
+            <span class="text-yellow-500">★★★★★</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="grilled_salmon.html" target="_blank" class="block bg-white rounded-lg shadow hover:shadow-md">
+        <img src="https://via.placeholder.com/150" alt="Grilled Salmon" class="rounded-t-lg w-full">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold">Grilled Salmon</h2>
+          <p class="text-sm text-gray-500">Seafood</p>
+          <div class="flex items-center justify-between">
+            <span class="text-red-500 font-bold">P 200</span>
+            <span class="text-yellow-500">★★★★★</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="veggie_pizza.html" target="_blank" class="block bg-white rounded-lg shadow hover:shadow-md">
+        <img src="https://via.placeholder.com/150" alt="Veggie Pizza" class="rounded-t-lg w-full">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold">Veggie Pizza</h2>
+          <p class="text-sm text-gray-500">Pizza</p>
+          <div class="flex items-center justify-between">
+            <span class="text-red-500 font-bold">P 190</span>
+            <span class="text-yellow-500">★★★★★</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="tuna_sandwich.html" target="_blank" class="block bg-white rounded-lg shadow hover:shadow-md">
+        <img src="https://via.placeholder.com/150" alt="Tuna Sandwich" class="rounded-t-lg w-full">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold">Tuna Sandwich</h2>
+          <p class="text-sm text-gray-500">Sandwich</p>
+          <div class="flex items-center justify-between">
+            <span class="text-red-500 font-bold">P 120</span>
+            <span class="text-yellow-500">★★★★★</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="mango_smoothie.html" target="_blank" class="block bg-white rounded-lg shadow hover:shadow-md">
+        <img src="https://via.placeholder.com/150" alt="Mango Smoothie" class="rounded-t-lg w-full">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold">Mango Smoothie</h2>
+          <p class="text-sm text-gray-500">Beverage</p>
+          <div class="flex items-center justify-between">
+            <span class="text-red-500 font-bold">P 95</span>
+            <span class="text-yellow-500">★★★★★</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleDrawer() {
+      const drawer = document.getElementById('drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      const isHidden = drawer.classList.contains('-translate-x-full');
+
+      if (isHidden) {
+        drawer.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+      } else {
+        drawer.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

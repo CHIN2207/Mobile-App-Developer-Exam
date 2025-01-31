@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://i.pinimg.com/236x/ea/e5/00/eae500b67f78f9553a33b9654125df50.jpg');
+            background-size: cover;
+        }
+        .login-container {
+            background-color: rgb(126, 108, 108);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(16, 228, 62, 0.766);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-container .password-container {
+            position: relative;
+        }
+        .login-container .password-container input {
+            width: calc(100% - 40px);
+        }
+        .login-container .password-container .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5a4c4c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #555;
+        }
+        .notification {
+            display: none;
+            margin-top: 20px;
+            color: red;
+        }
+    </style>
+    <script>
+        const users = [
+            { email: 'user@example.com', password: 'password123' },
+            { email: 'admin@example.com', password: 'admin123' }
+        ];
+
+        function login(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const notification = document.getElementById('notification');
+
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                notification.style.display = 'none';
+                alert('Login successful!');
+                localStorage.setItem('token', 'loggedIn'); // Store a token to indicate login status
+                window.location.href = 'menu.html'; // Redirect to menu page
+            } else {
+                notification.style.display = 'block';
+                notification.textContent = 'Invalid email or password.';
+            }
+        }
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggle-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = '👁️';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>WELCOME TO PALUTO</h2>
+        <form onsubmit="login(event)">
+            <input type="email" id="email" placeholder="Email" required>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password" required>
+                <span id="toggle-password" class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div id="notification" class="notification">Invalid email or password.</div>
+    </div>
+</body>
+</html>
