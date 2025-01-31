@@ -11,6 +11,7 @@
 -email= user@example.com
 
 -pass = password123
+
 then after you login the loyalty point well pop-up
 
 then you can click the navigation tab and see other menu like home, order and more
